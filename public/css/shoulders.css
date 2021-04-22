@@ -17,11 +17,18 @@ main {
     font-family: "CMU Sans Serif Medium";
     background-color: #F5F5F5;
     width: 100%;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 10px;
+    box-shadow:  5px 5px 50px #D3D7D9,
+            /* -3px -1px 4px #F5F5F5; */
 }
 
 .planck-title {
     font-family: "CMU Sans Serif Demi Condensed";
     padding-top: 5px;
+}
+
+.footer-img {
+    width: 30%;
+    float: right;
 }
