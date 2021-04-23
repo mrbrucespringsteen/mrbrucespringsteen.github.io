@@ -14,8 +14,9 @@ body {
 }
 
 main {
+    float: left;
     font-family: "CMU Sans Serif Medium";
-    background-color: #FFFFFF;
+    background-color: #f8f8f8;
     width: 100%;
     border-radius: 30px;
     padding: 10px;
@@ -26,10 +27,25 @@ main {
 
 .planck-title {
     font-family: "CMU Sans Serif Demi Condensed";
+    text-align: center;
     /* padding-bottom: 5px; */
 }
 
 .footer-img {
-    width: 17%;
-    float: right;
+    width: 15%;
+    float: left;
+}
+
+.note {
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    font-family: "CMU Sans Serif Medium";
+    padding: 8px;
+    box-shadow:  25px 25px 40px #d3d3d3,
+            -25px -25px 40px #ffffff;
+    margin-top: 200px;
+    /* box-shadow:  5px 5px 60px #abadae,
+        -3px -1px 60px #FFFFFF; */
+    /* vertical-align: middle;
+    display: inline-block; */
 }
