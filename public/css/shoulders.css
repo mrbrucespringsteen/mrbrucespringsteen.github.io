@@ -10,31 +10,26 @@
 }
 
 body {
-    /* background-color: #D8EEFE; */
-    /* background-color: #baccd8; */
-    /* background-color: #cfe0ec; */
-    /* background-color: #cbdeeb; */
-    /* background-color: #bec9d0; */
-    background-color: #d6e0eb;
-    /* background-color: #c4ced9; */
+    background-color: #ededf1;
 }
 
 main {
     font-family: "CMU Sans Serif Medium";
-    background-color: #F5F5F5;
+    background-color: #FFFFFF;
     width: 100%;
     border-radius: 30px;
     padding: 10px;
+    /* padding: 0px 10px 10px 10px; */
     box-shadow:  5px 5px 50px #D3D7D9,
             /* -3px -1px 4px #F5F5F5; */
 }
 
 .planck-title {
     font-family: "CMU Sans Serif Demi Condensed";
-    padding-top: 5px;
+    /* padding-bottom: 5px; */
 }
 
 .footer-img {
-    width: 30%;
+    width: 17%;
     float: right;
 }
