@@ -1,38 +1,4 @@
 
-@font-face {
-    font-family: "CMU Sans Serif Medium";
-    src: url("../fonts/cmunss.ttf");
-}
-
-@font-face {
-    font-family: "CMU Sans Serif Demi Condensed";
-    src: url("../fonts/cmunssdc.ttf");
-}
-
-body {
-    background-color: #ededf1;
-}
-
-main {
-    float: left;
-    font-family: "CMU Sans Serif Medium";
-    background-color: #f8f8f8;
-    width: 100%;
-    border-radius: 30px;
-    padding: 10px;
-    box-shadow:  5px 5px 50px #D3D7D9,
-            /* -3px -1px 4px #F5F5F5; */
-}
-
-.planck-title {
-    font-family: "CMU Sans Serif Demi Condensed";
-    text-align: center;
-}
-
-.planck-img {
-    position: absolute;
-    float: left;
-}
 
 /* Solid border */
 hr.solid {
