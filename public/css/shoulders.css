@@ -15,7 +15,8 @@ body {
 
 main {
     float: left;
-    font-family: "CMU Sans Serif Medium";
+    font-family: 'Libertinus';
+    /* font-family: "CMU Sans Serif Medium"; */
     background-color: #f8f8f8;
     width: 100%;
     border-radius: 30px;
@@ -25,7 +26,8 @@ main {
 }
 
 .planck-title {
-    font-family: "CMU Sans Serif Demi Condensed";
+    /* font-family: "CMU Sans Serif Demi Condensed"; */
+    font-family: 'Libertinus';
     text-align: center;
 }
 

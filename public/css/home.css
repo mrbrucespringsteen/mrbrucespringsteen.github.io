@@ -2,11 +2,11 @@
 
 /* Solid border */
 hr.solid {
-    border-top: 3px solid black;
+    border-top: 2px solid black;
 }
 
 /* Rounded border */
-hr.rounded {
+/* hr.rounded {
     border-top: 5px solid black;
     border-radius: 5px;
-}
+} */
