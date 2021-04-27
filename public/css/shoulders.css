@@ -1,5 +1,5 @@
 
-@font-face {
+/* @font-face {
     font-family: "CMU Sans Serif Medium";
     src: url("../fonts/cmunss.ttf");
 }
@@ -7,7 +7,7 @@
 @font-face {
     font-family: "CMU Sans Serif Demi Condensed";
     src: url("../fonts/cmunssdc.ttf");
-}
+} */
 
 body {
     background-color: #ededf1;
@@ -39,9 +39,8 @@ main {
 .note {
     background-color: #f8f8f8;
     border-radius: 20px;
-    font-family: "CMU Sans Serif Medium";
+    font-family: 'Libertinus';
     padding: 8px;
     box-shadow:  25px 25px 40px #d3d3d3,
             -25px -25px 40px #ffffff;
-    margin-top: 350px;
 }
