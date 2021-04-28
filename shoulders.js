@@ -1,32 +1,36 @@
 window.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded');
 
+    const apiUrl = "https://api.sheety.co/3c4e73c3bfbcbf603944bdd17c210881/planckShoulders/attributions"
 
     const formBuilder = () => {
         let formDiv = document.querySelector(".form")
         let form = document.createElement("form")
-        let textArea = document.createElement("textarea")
+        let inputText = document.createElement("input")
         let lineBreak = document.createElement("br")
         let lineBreak2 = document.createElement("br")
         let submitButton = document.createElement("input")
+        let label = document.createElement("label")
+        label.innerHTML = "You created something great: "
+        let attributionEnding = document.createElement("label")
+        attributionEnding.innerHTML = ". And when someone else used it and received funds, they thought you should have some too."
 
-
-        form.appendChild(textArea)
+        form.appendChild(label)
+        form.appendChild(inputText)
+        form.appendChild(attributionEnding)
         form.appendChild(lineBreak)
         form.appendChild(lineBreak2)
-        // form.innerHTML = "<br><br>"
         form.appendChild(submitButton)
         formDiv.appendChild(form)
 
-        //! textArea
-        textArea.classList.add("note")
-        textArea.style.width = "70%"
-        textArea.style.border = "1px solid #A19DAA"
+        //! input
+        inputText.placeholder = "Type your attribution"
+        inputText.style.backgroundColor = "transparent"
+        inputText.style.border = "none"
 
         //! submit button
         submitButton.type = "submit"
         submitButton.classList.add("note")
-        submitButton.style.border = "1px solid #A19DAA"
+        submitButton.style.border = "1px solid #f8f8f8"
 
         form.onsubmit = function (e) {
             e.preventDefault()
@@ -54,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        fetch("https://api.sheety.co/3c4e73c3bfbcbf603944bdd17c210881/planckShoulders/attributions", {
+        fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -63,11 +67,64 @@ window.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(body)
         })
         .then(response => response.json())
-        // .then(data => {
-        // console.log("Data Sent", data);
-        // });
     }
 
+    const keyLookup = () => {
+        let buttonLookup = document.querySelector("#btn-lookup")
+
+        buttonLookup.onclick = function () {
+            let lineBreak = document.createElement("br")
+            let lineBreak2 = document.createElement("br")
+            let formDiv = document.querySelector(".form")
+            formDiv.innerHTML = " "
+            let inputField = document.createElement("input")
+            inputField.placeholder = "Type your attribution"
+            inputField.style.backgroundColor = "transparent"
+            inputField.classList.add("note")
+            inputField.style.border = "1px solid #f8f8f8"        
+
+            let submitButton = document.createElement("input")
+            submitButton.type = "submit"
+            submitButton.classList.add("note")
+            submitButton.style.border = "1px solid #f8f8f8"
+
+            buttonLookup.innerHTML = " "
+
+            let form = document.createElement("form")
+            form.appendChild(inputField)
+            form.appendChild(lineBreak)
+            form.appendChild(lineBreak2)
+            form.appendChild(submitButton)
+            formDiv.appendChild(form)
+
+
+            form.onsubmit = function (e) {
+                e.preventDefault()
+                let formData = e.target.children[0].value
+                lookupAttribution(formData)
+                form.reset()
+        }}
+    }
+
+    const lookupAttribution = (idKey) => {
+
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            
+            for (let attr of data.attributions) {
+                if (attr.idKey === idKey) {
+                    let formDiv = document.querySelector(".form")
+                    formDiv.innerHTML = `You created something great: <strong>${attr.attrMessage}</strong>. And when someone else used it and received funds, they thought you should have some too.`
+
+                    document.querySelector("#btn-lookup").previousElementSibling.innerHTML = " "
+                    console.log(attr)
+                    return attr
+                }
+            }
+        })
+    }
 
     formBuilder()
+    keyLookup()
 })
