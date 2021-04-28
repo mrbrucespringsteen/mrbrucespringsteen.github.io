@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         form.onsubmit = function (e) {
             e.preventDefault()
-            let formData = e.target.children[0].value
+            let formData = e.target.children[1].value
             sendAttributionToApi(formData)
             form.reset()
         }
@@ -50,6 +50,9 @@ window.addEventListener('DOMContentLoaded', () => {
             result.push(characters.charAt(Math.floor(Math.random() * charactersLength)));
         }
         let idKey = result.join('')
+
+        let formDiv = document.querySelector(".form")
+        formDiv.innerHTML = `<h4>Your attribution key is ${idKey}</h4>`
 
         let body = {
             attribution: {
@@ -115,7 +118,7 @@ window.addEventListener('DOMContentLoaded', () => {
             for (let attr of data.attributions) {
                 if (attr.idKey === idKey) {
                     let formDiv = document.querySelector(".form")
-                    formDiv.innerHTML = `You created something great: <strong>${attr.attrMessage}</strong>. And when someone else used it and received funds, they thought you should have some too.`
+                    formDiv.innerHTML = `You created something great: ${attr.attrMessage}. And when someone else used it and received funds, they thought you should have some too.`
 
                     document.querySelector("#btn-lookup").previousElementSibling.innerHTML = " "
                 }
