@@ -118,8 +118,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     formDiv.innerHTML = `You created something great: <strong>${attr.attrMessage}</strong>. And when someone else used it and received funds, they thought you should have some too.`
 
                     document.querySelector("#btn-lookup").previousElementSibling.innerHTML = " "
-                    console.log(attr)
-                    return attr
                 }
             }
         })
