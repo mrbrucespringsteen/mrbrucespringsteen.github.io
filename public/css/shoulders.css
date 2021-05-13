@@ -53,3 +53,26 @@ main {
     box-shadow:  25px 25px 40px #d3d3d3,
             -25px -25px 40px #ffffff;
 }
+
+#planck-logo {
+    width: 7%;
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    #planck-logo {
+        width: 15%
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    #planck-logo {
+        width: 20%
+    }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    #planck-logo {
+        width: 21%
+    }
+}
