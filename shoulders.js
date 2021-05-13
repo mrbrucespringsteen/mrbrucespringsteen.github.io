@@ -52,7 +52,8 @@ window.addEventListener('DOMContentLoaded', () => {
         let idKey = result.join('')
 
         let formDiv = document.querySelector(".form")
-        formDiv.innerHTML = `<h4>Your link is here: <a href="https://www.p1anck.com/shoulders/${idKey}" target="_blank" rel="noopener">https://www.p1anck.com/shoulders/${idKey}</a></h4>`
+        // formDiv.innerHTML = `<h4>Your link is here: <a href="https://www.p1anck.com/shoulders/${idKey}" target="_blank" rel="noopener">https://www.p1anck.com/shoulders/${idKey}</a></h4>`
+        formDiv.innerHTML = `<h4>Your id is: ${idKey}" </h4>`
 
         let body = {
             attribution: {
