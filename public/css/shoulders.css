@@ -44,3 +44,12 @@ main {
     box-shadow:  25px 25px 40px #d3d3d3,
             -25px -25px 40px #ffffff;
 }
+
+.profile-pic {
+    /*  */
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow:  25px 25px 40px #d3d3d3,
+            -25px -25px 40px #ffffff;
+}
