@@ -1,0 +1,22 @@
+{
+  "name": "@arachnid/hardhat",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-etherscan": "^2.1.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@openzeppelin/contracts": "^4.0.0-rc.0",
+    "chai": "^4.3.3",
+    "ethereum-waffle": "^3.3.0",
+    "ethers": "^5.0.32",
+    "hardhat": "^2.1.1"
+  },
+  "scripts": {
+    "chain": "hardhat node",
+    "test": "hardhat test --network hardhat",
+    "compile": "hardhat compile",
+    "deploy": "hardhat --network test deploy",
+    "postdeploy": "hardhat run scripts/publish.js",
+    "mint": "hardhat --network test mint"
+  }
+}
