@@ -1,0 +1,18 @@
+runtime: python37
+
+handlers:
+ - url: /contract.json
+   static_files: static/contract.json
+   mime_type: application/json
+   upload: static/contract.json
+ - url: /cron|/token.*
+   script: auto
+ - url: /(|scratchpad|collection|faq)
+   static_files: app/index.html
+   upload: app/index.html
+ - url: /(.*)
+   static_files: app/\1
+   upload: app/.*
+
+includes:
+  - env_variables.yaml

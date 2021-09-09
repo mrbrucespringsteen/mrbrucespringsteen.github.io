@@ -1,0 +1,30 @@
+<svg viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        .poem {
+            font: {{font_size}}pt "Noto Sans", Helvetica, sans-serif;
+            dominant-baseline: hanging;
+        }
+        .lighthex {
+            fill: {{fg}};
+        }
+        .darkhex {
+            fill: {{bg}};
+        }
+    </style>
+    <defs>
+        <g id="icon">
+            <polygon points="40,5 75,25 75,55 40,75 5,55 5,25" class="darkhex" />
+            <polygon points="40,5 40,15 15,31 15,47, 5,55, 5,25" class="lighthex" />
+        </g>
+    </defs>
+    {% for char in hash -%}
+        {%- if char == 56 -%}
+            <use x="{{(loop.index0 % 8) * 80}}" y="{{(loop.index0 // 8) * 80}}" xlink:href="#icon" />
+        {% endif %}
+    {%- endfor %}
+    <text class="poem" x="{{(525 - w) / 2}}" y="{{(525 - h) / 2}}">
+        {% for line in text.split('\n') %}
+            <tspan x="{{(525 - w) / 2}}" dy="{% if loop.first %}0{% else %}1.1em{% endif %}">{{line}}</tspan>
+        {% endfor %}
+    </text>
+</svg>
